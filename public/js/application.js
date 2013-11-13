@@ -1,7 +1,11 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  $(window).scroll(function () {
+   if ($(window).scrollTop() >= $(document).height() - $(window).height() - 10) {
+      $('#pan-left').show().animate({right: "0px"}, 200 );
+    } else {
+        $('#pan-left').show().animate({right: "-600px"}, 500 );     //Add something at the end of the page
+    }
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 });
+});
+
